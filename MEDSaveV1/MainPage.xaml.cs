@@ -142,13 +142,17 @@ namespace MEDSaveV1
 
         private async void HospitalClick(object sender, EventArgs e)
         {
-            var apiUrl = "https://l4h2elr2e4.execute-api.us-east-1.amazonaws.com/Test/facility";
+            //calls just one facility
+            var apiUrl = "https://l4h2elr2e4.execute-api.us-east-1.amazonaws.com/Test/facility?facilityId=324285b4-ebd5-401c-a312-e3b960f6596c";
+            //trying to use this one to call the whole table
+            //var apiUrl2 = "https://l4h2elr2e4.execute-api.us-east-1.amazonaws.com/Test/facility?facilityId=7e5e2d94-c145-468e-a9b3-e55bb66b8fa1";
 
             using (HttpClient client = new HttpClient())
             {
                 try
                 {
                     var response = await client.GetAsync(apiUrl);
+
                     var responseBody = await response.Content.ReadAsStringAsync();
 
                     if (response.IsSuccessStatusCode)
