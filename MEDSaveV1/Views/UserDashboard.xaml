@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MEDSaveV1.Views.UserDashboard"
+             Title="UserDashboard">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Search Bar -->
+            <SearchBar 
+            x:Name="ServiceSearchBar" 
+            Placeholder="Search for services..."
+            SearchButtonPressed="OnSearchButtonPressed"/>
+
+            <!-- Patient's Welcome Message -->
+            <Label 
+            Text="Welcome, [Patient's Name]!"
+            FontSize="24"
+            FontAttributes="Bold"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start" />
+
+            <!-- Personal Details Section -->
+            <Frame BorderColor="Gray" Padding="15" CornerRadius="5">
+                <VerticalStackLayout>
+                    <Label Text="Personal Details" FontSize="20" FontAttributes="Bold" />
+                    <Label x:Name="NameLabel" Text="Name: [Patient's Full Name]" />
+                    <Label x:Name="DOBLabel" Text="DOB: [Date of Birth]" />
+                    <Label x:Name="ContactLabel" Text="Contact: [Phone Number]" />
+                    <Label x:Name="EmailLabel" Text="Email: [Email Address]" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Medical History Section -->
+            <Frame BorderColor="Gray" Padding="15" CornerRadius="5">
+                <VerticalStackLayout>
+                    <Label Text="Medical History" FontSize="20" FontAttributes="Bold" />
+                    <Label x:Name="BloodTypeLabel" Text="Blood Type: [Blood Type]" />
+                    <Label x:Name="KnownAllergiesLabel" Text="Known Allergies: [List of Allergies]" />
+                    <Label x:Name="CurrentMedicationLabel" Text="Current Medication: [Medication List]" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Upcoming Appointments Section -->
+            <Frame BorderColor="Gray" Padding="15" CornerRadius="5">
+                <VerticalStackLayout>
+                    <Label Text="Upcoming Appointments" FontSize="20" FontAttributes="Bold" />
+                    <ListView x:Name="AppointmentsListView">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding AppointmentDate}" 
+                                      Detail="{Binding DoctorName}" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Additional sections can be added similarly -->
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

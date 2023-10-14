@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MEDSaveV1.MainPage">
+
+    <ScrollView BackgroundColor="White">
+        <StackLayout Padding="20" Spacing="20">
+            <Label Text="Welcome Back!"
+           FontSize="28"
+           HorizontalTextAlignment="Center"
+           TextColor="DarkSlateGray"/>
+
+            <Label Text="Login or create a new user."
+           FontSize="18"
+           HorizontalTextAlignment="Center"
+           TextColor="DarkSlateGray"/>
+
+            <StackLayout Spacing="10">
+                <Label Text="Email"
+               FontSize="18"
+               TextColor="DarkSlateGray"/>
+                <Entry x:Name="Email"
+               FontSize="18"
+               Placeholder="Enter your email"
+               PlaceholderColor="DarkGray"
+               Keyboard="Email"
+               BackgroundColor="AliceBlue"/>
+            </StackLayout>
+
+            <StackLayout Spacing="10">
+                <Label Text="Password"
+               FontSize="18"
+               TextColor="DarkSlateGray"/>
+                <Entry x:Name ="Password" 
+               FontSize="18"
+               Placeholder="Enter your password"
+               PlaceholderColor="DarkGray"
+               IsPassword="True"
+               BackgroundColor="AliceBlue"/>
+            </StackLayout>
+
+            <Button Text="Login"
+            HorizontalOptions="Center"
+            WidthRequest="150"
+            BackgroundColor="MediumTurquoise"
+            TextColor="White"
+            Clicked="LoginClick"/>
+
+            <Button Text="Create User"
+            HorizontalOptions="Center"
+            WidthRequest="150"
+            BackgroundColor="MediumTurquoise"
+            TextColor="White"
+            Clicked="CreateUserClick"/>
+
+            <Button Text="Login with Google"
+            HorizontalOptions="Center"
+            WidthRequest="150"
+            BackgroundColor="#DB4437"
+            TextColor="White"
+            Clicked="GoogleLoginClick"/>
+
+            <Button Text="Get Hospital Details"
+            HorizontalOptions="Center"
+            WidthRequest="150"
+            BackgroundColor="#3b5998"
+            TextColor="White"
+            Clicked="HospitalClick"/>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

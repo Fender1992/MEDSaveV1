@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MEDSaveV1.Views.CreateUserPage"
+             Title="CreateUserPage">
+    <ScrollView >
+        <StackLayout Padding="20" Spacing="20">
+            <StackLayout>
+                <Label Text="Create A User"
+                   FontSize="28"
+                   HorizontalTextAlignment="Center"
+                   />
+            </StackLayout>
+
+            <StackLayout Spacing="10">
+                <Label Text="UserName"
+                   FontSize="18"
+                   />
+                <Entry Text="{Binding Path=User.UserName}" x:Name="UserName"
+                   FontSize="18"
+                   Placeholder="Enter your username"
+                   />
+            </StackLayout>
+
+            <StackLayout Spacing="10">
+                <Label Text="Last Name"
+                   FontSize="18"
+                   />
+                <Entry Text="{Binding Path=User.LastName}" x:Name="LastName"
+                   FontSize="18"
+                   Placeholder="Enter your last name"
+                   
+                   />
+            </StackLayout>
+
+            <StackLayout Spacing="10">
+                <Label Text="First Name"
+                   FontSize="18"
+                   />
+                <Entry Text="{Binding Path=User.FirstName}" x:Name="FirstName"
+                   FontSize="18"
+                   Placeholder="Enter your first name"
+                   />
+            </StackLayout>
+
+            <StackLayout Spacing="10">
+                <Label Text="Email"
+                   FontSize="18"
+                   />
+                <Entry Text="{Binding Path=User.Email}" x:Name="Email"
+                   FontSize="18"
+                   Placeholder="Enter your email"
+                   Keyboard="Email"
+                   />
+            </StackLayout>
+
+            <StackLayout Spacing="10">
+                <Label Text="Password"
+                   FontSize="18"
+                   />
+                <Entry Text="{Binding Path=User.Password}" x:Name="Password"
+                   FontSize="18"
+                   Placeholder="Create your password"
+                   IsPassword="True"
+                   />
+            </StackLayout>
+
+            <Button Text="Submit"
+                HorizontalOptions="Center"
+                WidthRequest="200"
+                Clicked="CreateUserClick"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
